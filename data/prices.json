@@ -1,0 +1,218 @@
+[
+  {
+    "sku": "CLO-SHT-006",
+    "currency": "USD",
+    "listPrice": 6500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-SHT-007",
+    "currency": "USD",
+    "listPrice": 6500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-SHT-008",
+    "currency": "USD",
+    "listPrice": 6500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-SHT-009",
+    "currency": "USD",
+    "listPrice": 6000,
+    "salePrice": 4500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-SHT-010",
+    "currency": "USD",
+    "listPrice": 4500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TEE-011",
+    "currency": "USD",
+    "listPrice": 3500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-HOD-012",
+    "currency": "USD",
+    "listPrice": 6500,
+    "salePrice": 3250,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-HOD-013",
+    "currency": "USD",
+    "listPrice": 6000,
+    "salePrice": 3000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-SWT-014",
+    "currency": "USD",
+    "listPrice": 6900,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TEE-015",
+    "currency": "USD",
+    "listPrice": 1800,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JEA-016",
+    "currency": "USD",
+    "listPrice": 7500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TRO-017",
+    "currency": "USD",
+    "listPrice": 6500,
+    "salePrice": 4875,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JEA-018",
+    "currency": "USD",
+    "listPrice": 6500,
+    "salePrice": 4875,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TRO-019",
+    "currency": "USD",
+    "listPrice": 7500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TRO-020",
+    "currency": "USD",
+    "listPrice": 7500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-COA-021",
+    "currency": "USD",
+    "listPrice": 17000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JKT-022",
+    "currency": "USD",
+    "listPrice": 21000,
+    "salePrice": 8499,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JKT-023",
+    "currency": "USD",
+    "listPrice": 17000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JKT-024",
+    "currency": "USD",
+    "listPrice": 13000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-JKT-025",
+    "currency": "USD",
+    "listPrice": 12000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TEE-026",
+    "currency": "USD",
+    "listPrice": 2000,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TOP-027",
+    "currency": "USD",
+    "listPrice": 4500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TOP-028",
+    "currency": "USD",
+    "listPrice": 5200,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TOP-029",
+    "currency": "USD",
+    "listPrice": 2200,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TOP-030",
+    "currency": "USD",
+    "listPrice": 4900,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-DRS-031",
+    "currency": "USD",
+    "listPrice": 8200,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-DRS-032",
+    "currency": "USD",
+    "listPrice": 8200,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-DRS-033",
+    "currency": "USD",
+    "listPrice": 11500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-DRS-034",
+    "currency": "USD",
+    "listPrice": 8200,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-DRS-035",
+    "currency": "USD",
+    "listPrice": 5500,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  }
+]

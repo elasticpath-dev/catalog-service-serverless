@@ -1,0 +1,739 @@
+openapi: 3.0.3
+info:
+  title: Catalog Service API
+  description: |
+    Product catalog API for ecommerce storefronts: products with variations and custom
+    attributes, a hierarchical category taxonomy with PLP rollup, and multi-currency
+    prices with optional sale prices.
+
+    **Conventions**
+    - Price amounts are integers in minor units (e.g. cents): `2500` = $25.00.
+    - A price with `salePrice` is on sale — render `listPrice` as "was", `salePrice` as "now".
+    - Variations without their own price inherit the parent product's price per currency.
+    - Errors always use the shape `{ "error": { "code": "...", "message": "..." } }`.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local (serverless offline)
+tags:
+  - name: Products
+  - name: Categories
+  - name: Prices
+
+paths:
+  /products:
+    post:
+      tags: [Products]
+      summary: Create a product
+      operationId: createProduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductInput'
+      responses:
+        '201':
+          description: Product created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    get:
+      tags: [Products]
+      summary: List products (paginated)
+      operationId: listProducts
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/nextToken'
+        - $ref: '#/components/parameters/currency'
+      responses:
+        '200':
+          description: Page of products with product-level prices
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, nextToken]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductWithPrices'
+                  nextToken:
+                    type: string
+                    nullable: true
+                    description: Pass back as ?nextToken= to fetch the next page
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /products/search:
+    get:
+      tags: [Products]
+      summary: Search a product by exactly one of id, sku, or slug
+      description: The sku parameter matches the parent product sku only (variation skus are not searchable).
+      operationId: searchProducts
+      parameters:
+        - name: id
+          in: query
+          schema: { type: string }
+        - name: sku
+          in: query
+          schema: { type: string }
+        - name: slug
+          in: query
+          schema: { type: string }
+        - $ref: '#/components/parameters/currency'
+      responses:
+        '200':
+          description: Matching product with prices on the product and every variation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductWithAllPrices'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /products/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Products]
+      summary: Get a product by id (PDP)
+      operationId: getProduct
+      parameters:
+        - $ref: '#/components/parameters/currency'
+      responses:
+        '200':
+          description: Product with prices on the product and every variation (variation fallback applied)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductWithAllPrices'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [Products]
+      summary: Update a product (partial)
+      description: Any subset of fields; variations are replaced wholesale when provided.
+      operationId: updateProduct
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProductInput'
+      responses:
+        '200':
+          description: Updated product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    delete:
+      tags: [Products]
+      summary: Delete a product
+      description: Also removes its category mappings and all prices for its skus.
+      operationId: deleteProduct
+      responses:
+        '200':
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /categories:
+    post:
+      tags: [Categories]
+      summary: Create a category
+      operationId: createCategory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCategoryInput'
+      responses:
+        '201':
+          description: Category created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    get:
+      tags: [Categories]
+      summary: List all categories (flat)
+      operationId: listCategories
+      responses:
+        '200':
+          description: All categories, sorted by name
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Category'
+
+  /categories/tree:
+    get:
+      tags: [Categories]
+      summary: Get the category taxonomy as a nested tree (top navigation)
+      operationId: getCategoryTree
+      responses:
+        '200':
+          description: Root categories with nested children
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CategoryTreeNode'
+
+  /categories/{idOrSlug}:
+    get:
+      tags: [Categories]
+      summary: Get a category by id or slug
+      operationId: getCategory
+      parameters:
+        - name: idOrSlug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Category with its descendant subtree nested under `children`
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryTreeNode'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /categories/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+    put:
+      tags: [Categories]
+      summary: Update a category (partial), including re-parenting
+      description: Set parentId to null to move a category to the top level. Cycles are rejected.
+      operationId: updateCategory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCategoryInput'
+      responses:
+        '200':
+          description: Updated category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+    delete:
+      tags: [Categories]
+      summary: Delete a category
+      description: Fails with 409 if the category has child categories. Removes the category from associated products.
+      operationId: deleteCategory
+      responses:
+        '200':
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteResult'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  /categories/{idOrSlug}/products:
+    get:
+      tags: [Categories]
+      summary: List products in a category and all of its descendants (PLP)
+      description: |
+        Hierarchy rollup: a product assigned to Shirts is also returned when listing
+        Tops or Men. Products carry product-level prices.
+      operationId: getProductsByCategory
+      parameters:
+        - name: idOrSlug
+          in: path
+          required: true
+          schema: { type: string }
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/nextToken'
+        - $ref: '#/components/parameters/currency'
+      responses:
+        '200':
+          description: Products in the category subtree
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [category, items, total, nextToken]
+                properties:
+                  category:
+                    type: object
+                    properties:
+                      id: { type: string }
+                      name: { type: string }
+                      slug: { type: string }
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductWithPrices'
+                  total:
+                    type: integer
+                    description: Total products in the subtree (before pagination)
+                  nextToken:
+                    type: string
+                    nullable: true
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /prices:
+    put:
+      tags: [Prices]
+      summary: Upsert a price (keyed by sku + currency)
+      description: The sku may be a product sku or a variation sku. Omitting salePrice on an update clears the sale.
+      operationId: upsertPrice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpsertPriceInput'
+      responses:
+        '200':
+          description: Existing price updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+        '201':
+          description: Price created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /prices/{sku}:
+    get:
+      tags: [Prices]
+      summary: Get raw price rows for a sku
+      description: No parent-product fallback here — fallback is applied on product responses only.
+      operationId: getPrices
+      parameters:
+        - name: sku
+          in: path
+          required: true
+          schema: { type: string }
+        - $ref: '#/components/parameters/currency'
+      responses:
+        '200':
+          description: Price rows across currencies
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Price'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /prices/{sku}/{currency}:
+    delete:
+      tags: [Prices]
+      summary: Delete one currency's price for a sku
+      operationId: deletePrice
+      parameters:
+        - name: sku
+          in: path
+          required: true
+          schema: { type: string }
+        - name: currency
+          in: path
+          required: true
+          schema: { type: string, example: USD }
+      responses:
+        '200':
+          description: Deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted: { type: boolean }
+                  sku: { type: string }
+                  currency: { type: string }
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      schema: { type: integer, minimum: 1, maximum: 100, default: 25 }
+    nextToken:
+      name: nextToken
+      in: query
+      description: Opaque pagination cursor from the previous page
+      schema: { type: string }
+    currency:
+      name: currency
+      in: query
+      description: Filter attached prices to one ISO 4217 currency
+      schema: { type: string, example: USD }
+
+  responses:
+    BadRequest:
+      description: Validation error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Conflict (duplicate sku/slug, category has children, or cycle)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum: [bad_request, not_found, conflict, internal_error]
+            message: { type: string }
+
+    ProductVariation:
+      type: object
+      required: [id, sku, options]
+      properties:
+        id: { type: string }
+        sku:
+          type: string
+          description: Variation sku, unique within the product
+        options:
+          type: object
+          additionalProperties: { type: string }
+          example: { size: 'M', color: 'Red' }
+        images:
+          type: array
+          items: { type: string, format: uri }
+          description: Variation-specific images (falls back to product images)
+
+    Product:
+      type: object
+      required: [id, name, description, sku, slug, images, attributes, categoryIds, variations, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        sku: { type: string }
+        slug: { type: string }
+        images:
+          type: array
+          items: { type: string, format: uri }
+        attributes:
+          type: object
+          additionalProperties: { type: string }
+          description: Custom key-value attributes
+          example: { color: 'White', material: '100% Cotton' }
+        categoryIds:
+          type: array
+          items: { type: string }
+        variations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductVariation'
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    PriceView:
+      type: object
+      required: [currency, listPrice, formatted]
+      properties:
+        currency: { type: string, example: USD }
+        listPrice:
+          type: integer
+          description: Minor units (cents). Render as "was" when salePrice is present
+          example: 2500
+        salePrice:
+          type: integer
+          description: Minor units (cents). Present only when on sale — render as "now"
+          example: 1999
+        formatted:
+          $ref: '#/components/schemas/FormattedPrice'
+
+    ProductWithPrices:
+      allOf:
+        - $ref: '#/components/schemas/Product'
+        - type: object
+          required: [prices]
+          properties:
+            prices:
+              type: array
+              items:
+                $ref: '#/components/schemas/PriceView'
+              description: Product-level prices
+
+    VariationWithPrices:
+      allOf:
+        - $ref: '#/components/schemas/ProductVariation'
+        - type: object
+          required: [prices]
+          properties:
+            prices:
+              type: array
+              items:
+                $ref: '#/components/schemas/PriceView'
+              description: Variation prices; currencies without a variation row inherit the parent product price
+
+    ProductWithAllPrices:
+      allOf:
+        - $ref: '#/components/schemas/ProductWithPrices'
+        - type: object
+          properties:
+            variations:
+              type: array
+              items:
+                $ref: '#/components/schemas/VariationWithPrices'
+
+    CreateProductInput:
+      type: object
+      required: [name, sku, slug, categoryIds]
+      properties:
+        name: { type: string }
+        description: { type: string, default: '' }
+        sku: { type: string }
+        slug:
+          type: string
+          pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+        images:
+          type: array
+          items: { type: string, format: uri }
+          default: []
+        attributes:
+          type: object
+          additionalProperties: { type: string }
+          default: {}
+        categoryIds:
+          type: array
+          items: { type: string }
+          minItems: 1
+        variations:
+          type: array
+          default: []
+          items:
+            type: object
+            required: [sku, options]
+            properties:
+              id: { type: string, description: 'Optional; generated when omitted' }
+              sku: { type: string }
+              options:
+                type: object
+                additionalProperties: { type: string }
+              images:
+                type: array
+                items: { type: string, format: uri }
+
+    UpdateProductInput:
+      type: object
+      description: Any subset of the create fields; at least one required. Variations are replaced wholesale.
+      minProperties: 1
+      properties:
+        name: { type: string }
+        description: { type: string }
+        sku: { type: string }
+        slug:
+          type: string
+          pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+        images:
+          type: array
+          items: { type: string, format: uri }
+        attributes:
+          type: object
+          additionalProperties: { type: string }
+        categoryIds:
+          type: array
+          items: { type: string }
+          minItems: 1
+        variations:
+          type: array
+          items:
+            type: object
+            required: [sku, options]
+            properties:
+              id: { type: string }
+              sku: { type: string }
+              options:
+                type: object
+                additionalProperties: { type: string }
+              images:
+                type: array
+                items: { type: string, format: uri }
+
+    Category:
+      type: object
+      required: [id, name, slug, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        slug: { type: string }
+        description: { type: string }
+        parentId:
+          type: string
+          description: Absent for top-level categories
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    CategoryTreeNode:
+      allOf:
+        - $ref: '#/components/schemas/Category'
+        - type: object
+          required: [children]
+          properties:
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryTreeNode'
+
+    CreateCategoryInput:
+      type: object
+      required: [name, slug]
+      properties:
+        name: { type: string }
+        slug:
+          type: string
+          pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+        description: { type: string }
+        parentId:
+          type: string
+          description: Must reference an existing category
+
+    UpdateCategoryInput:
+      type: object
+      description: Any subset; at least one field required.
+      minProperties: 1
+      properties:
+        name: { type: string }
+        slug:
+          type: string
+          pattern: '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+        description: { type: string }
+        parentId:
+          type: string
+          nullable: true
+          description: New parent category id, or null to move to top level
+
+    Price:
+      type: object
+      required: [sku, currency, listPrice, createdAt, updatedAt, formatted]
+      properties:
+        sku:
+          type: string
+          description: Product sku or variation sku
+        currency: { type: string, example: USD }
+        listPrice: { type: integer, example: 2500 }
+        salePrice: { type: integer, example: 1999 }
+        formatted:
+          $ref: '#/components/schemas/FormattedPrice'
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    FormattedPrice:
+      type: object
+      required: [listPrice]
+      description: Display strings for the price amounts, localized to the currency
+      properties:
+        listPrice: { type: string, example: "$25.00" }
+        salePrice:
+          type: string
+          example: "$19.99"
+          description: Present only when the price has a salePrice
+
+    UpsertPriceInput:
+      type: object
+      required: [sku, currency, listPrice]
+      properties:
+        sku: { type: string }
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          example: USD
+        listPrice:
+          type: integer
+          minimum: 1
+          description: Minor units (cents)
+        salePrice:
+          type: integer
+          minimum: 1
+          description: Minor units (cents); must be lower than listPrice
+
+    DeleteResult:
+      type: object
+      properties:
+        deleted: { type: boolean }
+        id: { type: string }

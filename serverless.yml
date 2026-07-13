@@ -1,0 +1,249 @@
+service: catalog-service
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-1'}
+  profile: serverless
+  httpApi:
+    cors: true
+  environment:
+    PRODUCTS_TABLE: ${self:custom.productsTable}
+    CATEGORIES_TABLE: ${self:custom.categoriesTable}
+    PRODUCT_CATEGORIES_TABLE: ${self:custom.productCategoriesTable}
+    PRICES_TABLE: ${self:custom.pricesTable}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:BatchGetItem
+            - dynamodb:BatchWriteItem
+          Resource:
+            - !GetAtt ProductsTable.Arn
+            - !Sub "${ProductsTable.Arn}/index/*"
+            - !GetAtt CategoriesTable.Arn
+            - !Sub "${CategoriesTable.Arn}/index/*"
+            - !GetAtt ProductCategoriesTable.Arn
+            - !Sub "${ProductCategoriesTable.Arn}/index/*"
+            - !GetAtt PricesTable.Arn
+
+custom:
+  productsTable: catalog-products-${self:provider.stage}
+  categoriesTable: catalog-categories-${self:provider.stage}
+  productCategoriesTable: catalog-product-categories-${self:provider.stage}
+  pricesTable: catalog-prices-${self:provider.stage}
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    target: node20
+    platform: node
+  serverless-dynamodb:
+    stages:
+      - local
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+    seed:
+      catalog:
+        sources:
+          - table: ${self:custom.productsTable}
+            sources: [./data/products.json]
+          - table: ${self:custom.categoriesTable}
+            sources: [./data/categories.json]
+          - table: ${self:custom.productCategoriesTable}
+            sources: [./data/product-categories.json]
+          - table: ${self:custom.pricesTable}
+            sources: [./data/prices.json]
+
+plugins:
+  - serverless-esbuild
+  - serverless-dynamodb
+  - serverless-offline
+
+functions:
+  # Products
+  createProduct:
+    handler: src/handlers/products/create.handler
+    events:
+      - httpApi: "POST /products"
+  listProducts:
+    handler: src/handlers/products/list.handler
+    events:
+      - httpApi: "GET /products"
+  searchProducts:
+    handler: src/handlers/products/search.handler
+    events:
+      - httpApi: "GET /products/search"
+  getProduct:
+    handler: src/handlers/products/get.handler
+    events:
+      - httpApi: "GET /products/{id}"
+  updateProduct:
+    handler: src/handlers/products/update.handler
+    events:
+      - httpApi: "PUT /products/{id}"
+  deleteProduct:
+    handler: src/handlers/products/delete.handler
+    events:
+      - httpApi: "DELETE /products/{id}"
+
+  # Categories
+  createCategory:
+    handler: src/handlers/categories/create.handler
+    events:
+      - httpApi: "POST /categories"
+  listCategories:
+    handler: src/handlers/categories/list.handler
+    events:
+      - httpApi: "GET /categories"
+  getCategoryTree:
+    handler: src/handlers/categories/tree.handler
+    events:
+      - httpApi: "GET /categories/tree"
+  getCategory:
+    handler: src/handlers/categories/get.handler
+    events:
+      - httpApi: "GET /categories/{idOrSlug}"
+  updateCategory:
+    handler: src/handlers/categories/update.handler
+    events:
+      - httpApi: "PUT /categories/{id}"
+  deleteCategory:
+    handler: src/handlers/categories/delete.handler
+    events:
+      - httpApi: "DELETE /categories/{id}"
+  getProductsByCategory:
+    handler: src/handlers/categories/products.handler
+    events:
+      - httpApi: "GET /categories/{idOrSlug}/products"
+
+  # Prices
+  upsertPrice:
+    handler: src/handlers/prices/upsert.handler
+    events:
+      - httpApi: "PUT /prices"
+  getPrices:
+    handler: src/handlers/prices/get.handler
+    events:
+      - httpApi: "GET /prices/{sku}"
+  deletePrice:
+    handler: src/handlers/prices/delete.handler
+    events:
+      - httpApi: "DELETE /prices/{sku}/{currency}"
+
+  # Seed (no HTTP event - invoked on deploy or manually)
+  seed:
+    handler: src/handlers/seed.handler
+    timeout: 60
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.productsTable}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: sku
+            AttributeType: S
+          - AttributeName: slug
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: sku-index
+            KeySchema:
+              - AttributeName: sku
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+          - IndexName: slug-index
+            KeySchema:
+              - AttributeName: slug
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+
+    # One row per (sku, currency); sku can be a product sku or a variation sku.
+    PricesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.pricesTable}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: sku
+            AttributeType: S
+          - AttributeName: currency
+            AttributeType: S
+        KeySchema:
+          - AttributeName: sku
+            KeyType: HASH
+          - AttributeName: currency
+            KeyType: RANGE
+
+    CategoriesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.categoriesTable}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: slug
+            AttributeType: S
+          - AttributeName: parentId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: slug-index
+            KeySchema:
+              - AttributeName: slug
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+          - IndexName: parent-index
+            KeySchema:
+              - AttributeName: parentId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+
+    ProductCategoriesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.productCategoriesTable}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: categoryId
+            AttributeType: S
+          - AttributeName: productId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: categoryId
+            KeyType: HASH
+          - AttributeName: productId
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: product-index
+            KeySchema:
+              - AttributeName: productId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL

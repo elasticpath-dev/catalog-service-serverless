@@ -1,0 +1,122 @@
+[
+  {
+    "categoryId": "cat-mens-shirts",
+    "productId": "prod-006"
+  },
+  {
+    "categoryId": "cat-mens-shirts",
+    "productId": "prod-007"
+  },
+  {
+    "categoryId": "cat-mens-shirts",
+    "productId": "prod-008"
+  },
+  {
+    "categoryId": "cat-mens-shirts",
+    "productId": "prod-009"
+  },
+  {
+    "categoryId": "cat-mens-shirts",
+    "productId": "prod-010"
+  },
+  {
+    "categoryId": "cat-mens-tops",
+    "productId": "prod-011"
+  },
+  {
+    "categoryId": "cat-mens-tops",
+    "productId": "prod-012"
+  },
+  {
+    "categoryId": "cat-mens-tops",
+    "productId": "prod-013"
+  },
+  {
+    "categoryId": "cat-mens-tops",
+    "productId": "prod-014"
+  },
+  {
+    "categoryId": "cat-mens-tops",
+    "productId": "prod-015"
+  },
+  {
+    "categoryId": "cat-mens-bottoms",
+    "productId": "prod-016"
+  },
+  {
+    "categoryId": "cat-mens-bottoms",
+    "productId": "prod-017"
+  },
+  {
+    "categoryId": "cat-mens-bottoms",
+    "productId": "prod-018"
+  },
+  {
+    "categoryId": "cat-mens-bottoms",
+    "productId": "prod-019"
+  },
+  {
+    "categoryId": "cat-mens-bottoms",
+    "productId": "prod-020"
+  },
+  {
+    "categoryId": "cat-mens-outerwear",
+    "productId": "prod-021"
+  },
+  {
+    "categoryId": "cat-mens-outerwear",
+    "productId": "prod-022"
+  },
+  {
+    "categoryId": "cat-mens-outerwear",
+    "productId": "prod-023"
+  },
+  {
+    "categoryId": "cat-mens-outerwear",
+    "productId": "prod-024"
+  },
+  {
+    "categoryId": "cat-mens-outerwear",
+    "productId": "prod-025"
+  },
+  {
+    "categoryId": "cat-womens-tops",
+    "productId": "prod-026"
+  },
+  {
+    "categoryId": "cat-womens-tops",
+    "productId": "prod-027"
+  },
+  {
+    "categoryId": "cat-womens-tops",
+    "productId": "prod-028"
+  },
+  {
+    "categoryId": "cat-womens-tops",
+    "productId": "prod-029"
+  },
+  {
+    "categoryId": "cat-womens-tops",
+    "productId": "prod-030"
+  },
+  {
+    "categoryId": "cat-womens-dresses",
+    "productId": "prod-031"
+  },
+  {
+    "categoryId": "cat-womens-dresses",
+    "productId": "prod-032"
+  },
+  {
+    "categoryId": "cat-womens-dresses",
+    "productId": "prod-033"
+  },
+  {
+    "categoryId": "cat-womens-dresses",
+    "productId": "prod-034"
+  },
+  {
+    "categoryId": "cat-womens-dresses",
+    "productId": "prod-035"
+  }
+]

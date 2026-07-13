@@ -1,0 +1,30 @@
+{
+  "name": "catalog-service",
+  "version": "1.0.0",
+  "description": "Product catalog service - AWS Lambda + DynamoDB via Serverless Framework",
+  "private": true,
+  "scripts": {
+    "dev": "serverless offline start --stage local",
+    "deploy": "serverless deploy --stage prod && serverless invoke -f seed --stage prod",
+    "seed": "ts-node scripts/seed.ts",
+    "seed:aws": "ts-node scripts/seed.ts --aws",
+    "dynamodb:install": "serverless dynamodb install",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.645.0",
+    "@aws-sdk/lib-dynamodb": "^3.645.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^20.14.0",
+    "esbuild": "^0.24.2",
+    "serverless": "^3.40.0",
+    "serverless-dynamodb": "^0.2.56",
+    "serverless-esbuild": "^1.54.6",
+    "serverless-offline": "^13.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}

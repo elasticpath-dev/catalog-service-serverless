@@ -1,0 +1,13 @@
+[
+  { "sku": "CLO-TEE-001", "currency": "USD", "listPrice": 2500, "salePrice": 1999, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-TEE-001", "currency": "EUR", "listPrice": 2300, "salePrice": 1899, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-JEA-002", "currency": "USD", "listPrice": 6900, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-JEA-002", "currency": "EUR", "listPrice": 6500, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-HOD-003", "currency": "USD", "listPrice": 5500, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-HOD-003", "currency": "EUR", "listPrice": 5200, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-HOD-003-XL", "currency": "USD", "listPrice": 6000, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-DRS-004", "currency": "USD", "listPrice": 8900, "salePrice": 7900, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-DRS-004", "currency": "EUR", "listPrice": 8500, "salePrice": 7500, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-COA-005", "currency": "USD", "listPrice": 19900, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" },
+  { "sku": "CLO-COA-005", "currency": "EUR", "listPrice": 18900, "createdAt": "2026-07-12T00:00:00.000Z", "updatedAt": "2026-07-12T00:00:00.000Z" }
+]

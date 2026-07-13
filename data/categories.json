@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cat-men",
+    "name": "Men",
+    "slug": "men",
+    "description": "Menswear across tops, bottoms, and outerwear",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-mens-tops",
+    "name": "Tops",
+    "slug": "mens-tops",
+    "description": "Men's t-shirts, shirts, and hoodies",
+    "parentId": "cat-men",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-mens-shirts",
+    "name": "Shirts",
+    "slug": "mens-shirts",
+    "description": "Men's shirts and tees",
+    "parentId": "cat-mens-tops",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-mens-bottoms",
+    "name": "Bottoms",
+    "slug": "mens-bottoms",
+    "description": "Men's jeans, chinos, and shorts",
+    "parentId": "cat-men",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-mens-outerwear",
+    "name": "Outerwear",
+    "slug": "mens-outerwear",
+    "description": "Men's coats and jackets",
+    "parentId": "cat-men",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-women",
+    "name": "Women",
+    "slug": "women",
+    "description": "Womenswear across tops and dresses",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-womens-tops",
+    "name": "Tops",
+    "slug": "womens-tops",
+    "description": "Women's tops and blouses",
+    "parentId": "cat-women",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "id": "cat-womens-dresses",
+    "name": "Dresses",
+    "slug": "womens-dresses",
+    "description": "Women's dresses",
+    "parentId": "cat-women",
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z"
+  }
+]

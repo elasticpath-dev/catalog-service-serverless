@@ -1,0 +1,262 @@
+{
+  "info": {
+    "name": "Catalog Service",
+    "description": "Product catalog API: products with variations and custom attributes, hierarchical categories with PLP rollup, and multi-currency prices (amounts in minor units/cents; salePrice present = on sale, listPrice is the 'was' price).\n\nSet the `baseUrl` collection variable (defaults to the local serverless-offline server).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000", "type": "string" },
+    { "key": "productId", "value": "prod-001", "type": "string" },
+    { "key": "categoryIdOrSlug", "value": "men", "type": "string" },
+    { "key": "sku", "value": "CLO-TEE-001", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "List products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/products?limit=25&currency=USD",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"],
+              "query": [
+                { "key": "limit", "value": "25" },
+                { "key": "nextToken", "value": "", "disabled": true },
+                { "key": "currency", "value": "USD" }
+              ]
+            },
+            "description": "Paginated list with product-level prices. Pass the returned nextToken to fetch the next page."
+          }
+        },
+        {
+          "name": "Get product by id (PDP)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}?currency=USD",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{productId}}"],
+              "query": [{ "key": "currency", "value": "USD", "disabled": true }]
+            },
+            "description": "Full PDP payload: product prices plus per-variation prices with parent fallback."
+          }
+        },
+        {
+          "name": "Search product (by sku)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/products/search?sku={{sku}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "search"],
+              "query": [
+                { "key": "sku", "value": "{{sku}}" },
+                { "key": "slug", "value": "classic-cotton-crew-tee", "disabled": true },
+                { "key": "id", "value": "prod-001", "disabled": true },
+                { "key": "currency", "value": "USD", "disabled": true }
+              ]
+            },
+            "description": "Provide exactly one of sku, slug, or id. Sku matches the parent product sku only."
+          }
+        },
+        {
+          "name": "Create product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": ["{{baseUrl}}"],
+              "path": ["products"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Oxford Button-Down Shirt\",\n  \"description\": \"Classic oxford cloth shirt\",\n  \"sku\": \"CLO-SHI-006\",\n  \"slug\": \"oxford-button-down-shirt\",\n  \"images\": [\"https://placehold.co/600x800?text=Oxford\"],\n  \"attributes\": { \"color\": \"Light Blue\", \"material\": \"100% Cotton\" },\n  \"categoryIds\": [\"cat-mens-shirts\"],\n  \"variations\": [\n    { \"sku\": \"CLO-SHI-006-M\", \"options\": { \"size\": \"M\", \"color\": \"Light Blue\" } },\n    { \"sku\": \"CLO-SHI-006-L\", \"options\": { \"size\": \"L\", \"color\": \"Light Blue\" } }\n  ]\n}"
+            },
+            "description": "Sku and slug must be unique across products; variation skus unique within the product; categoryIds must exist."
+          }
+        },
+        {
+          "name": "Update product",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{productId}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"attributes\": { \"color\": \"White\", \"material\": \"100% Combed Cotton\", \"season\": \"All-year\" },\n  \"categoryIds\": [\"cat-mens-shirts\"]\n}"
+            },
+            "description": "Partial update — send any subset of fields. Variations, when provided, are replaced wholesale."
+          }
+        },
+        {
+          "name": "Delete product",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/products/{{productId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["products", "{{productId}}"]
+            },
+            "description": "Also removes category mappings and all prices for the product's skus."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "List categories (flat)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            }
+          }
+        },
+        {
+          "name": "Category tree (top navigation)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/categories/tree",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "tree"]
+            },
+            "description": "Full taxonomy as nested nodes (children sorted by name)."
+          }
+        },
+        {
+          "name": "Get category by id or slug",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/categories/{{categoryIdOrSlug}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "{{categoryIdOrSlug}}"]
+            }
+          }
+        },
+        {
+          "name": "Products by category (PLP, rollup)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/categories/{{categoryIdOrSlug}}/products?limit=25&currency=USD",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "{{categoryIdOrSlug}}", "products"],
+              "query": [
+                { "key": "limit", "value": "25" },
+                { "key": "nextToken", "value": "", "disabled": true },
+                { "key": "currency", "value": "USD" }
+              ]
+            },
+            "description": "Returns products in the category AND all descendant categories (e.g. 'men' includes products assigned to Shirts). Products carry product-level prices."
+          }
+        },
+        {
+          "name": "Create category",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Polos\",\n  \"slug\": \"mens-polos\",\n  \"description\": \"Men's polo shirts\",\n  \"parentId\": \"cat-mens-tops\"\n}"
+            },
+            "description": "Slug must be unique. Omit parentId for a top-level category."
+          }
+        },
+        {
+          "name": "Update category (re-parent)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/categories/cat-mens-shirts",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "cat-mens-shirts"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Shirts & Tees\",\n  \"parentId\": \"cat-mens-tops\"\n}"
+            },
+            "description": "Set parentId to null to move to top level. Parenting to itself or a descendant returns 409."
+          }
+        },
+        {
+          "name": "Delete category",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/categories/cat-mens-shirts",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "cat-mens-shirts"]
+            },
+            "description": "Returns 409 if the category has children. Removes the category from associated products."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prices",
+      "item": [
+        {
+          "name": "Upsert price",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/prices",
+              "host": ["{{baseUrl}}"],
+              "path": ["prices"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"{{sku}}\",\n  \"currency\": \"GBP\",\n  \"listPrice\": 2200,\n  \"salePrice\": 1799\n}"
+            },
+            "description": "Keyed by sku + currency; 201 on create, 200 on update. Amounts are minor units (cents). The sku may be a product sku or a variation sku. Omitting salePrice on an update clears the sale."
+          }
+        },
+        {
+          "name": "Get prices for sku",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/prices/{{sku}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["prices", "{{sku}}"],
+              "query": [{ "key": "currency", "value": "USD", "disabled": true }]
+            },
+            "description": "Raw price rows across currencies — no parent fallback (fallback applies on product responses)."
+          }
+        },
+        {
+          "name": "Delete price",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/prices/{{sku}}/GBP",
+              "host": ["{{baseUrl}}"],
+              "path": ["prices", "{{sku}}", "GBP"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

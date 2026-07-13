@@ -1,0 +1,2201 @@
+[
+  {
+    "id": "prod-006",
+    "name": "Twill Button-Up Shirt",
+    "description": "A new collection that celebrates over a hundred years of heritage, inspired by our vintage Big Shirt archives and redesigned for today. This long-sleeve button-up shirt is in a soft, lightweight twill fabric and relaxed-fit silhouette.",
+    "sku": "CLO-SHT-006",
+    "slug": "twill-button-up-shirt",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6428-00447-500_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6428-00447-500_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6428-00447-500_prod1"
+    ],
+    "attributes": {
+      "color": "Brick Red",
+      "material": "Twill Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-mens-shirts"
+    ],
+    "variations": [
+      {
+        "id": "var-006-1",
+        "sku": "CLO-SHT-006-BRI-S",
+        "options": {
+          "color": "Brick Red",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-006-2",
+        "sku": "CLO-SHT-006-BRI-M",
+        "options": {
+          "color": "Brick Red",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-006-3",
+        "sku": "CLO-SHT-006-GRE-S",
+        "options": {
+          "color": "Green Blue",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6426-00446-300_prod1"
+        ]
+      },
+      {
+        "id": "var-006-4",
+        "sku": "CLO-SHT-006-GRE-M",
+        "options": {
+          "color": "Green Blue",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6426-00446-300_prod1"
+        ]
+      },
+      {
+        "id": "var-006-5",
+        "sku": "CLO-SHT-006-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6418-00424-100_prod1"
+        ]
+      },
+      {
+        "id": "var-006-6",
+        "sku": "CLO-SHT-006-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6418-00424-100_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-007",
+    "name": "A&F Resort Shirt",
+    "description": "Made from an elevated, structured cotton-linen blend fabric, this short-sleeve button-up shirt is perfect for a sunny day. The relaxed fit, resort-style camp collar, embroidery details, and straight hem create a look that feels both effortless and elevated.",
+    "sku": "CLO-SHT-007",
+    "slug": "aandf-resort-shirt",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6535-00454-400_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6535-00454-400_prod2"
+    ],
+    "attributes": {
+      "color": "Dark Roast",
+      "material": "Cotton-Linen Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-mens-shirts"
+    ],
+    "variations": [
+      {
+        "id": "var-007-1",
+        "sku": "CLO-SHT-007-DAR-S",
+        "options": {
+          "color": "Dark Roast",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-007-2",
+        "sku": "CLO-SHT-007-DAR-M",
+        "options": {
+          "color": "Dark Roast",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-007-3",
+        "sku": "CLO-SHT-007-LIG-S",
+        "options": {
+          "color": "Light Blue",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6286-00408-210_prod1"
+        ]
+      },
+      {
+        "id": "var-007-4",
+        "sku": "CLO-SHT-007-LIG-M",
+        "options": {
+          "color": "Light Blue",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6286-00408-210_prod1"
+        ]
+      },
+      {
+        "id": "var-007-5",
+        "sku": "CLO-SHT-007-CRE-S",
+        "options": {
+          "color": "Cream",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6291-00410-178_prod1"
+        ]
+      },
+      {
+        "id": "var-007-6",
+        "sku": "CLO-SHT-007-CRE-M",
+        "options": {
+          "color": "Cream",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6291-00410-178_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-008",
+    "name": "100% Linen Icon Button-Up Shirt",
+    "description": "Long-sleeve button-up shirt in a soft 100% linen fabric and relaxed-fit silhouette. Features an embroidered icon at the left chest, a classic collar and a curved hem.",
+    "sku": "CLO-SHT-008",
+    "slug": "100pct-linen-icon-button-up-shirt",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6041-00345-220_prod1"
+    ],
+    "attributes": {
+      "color": "Royal Indigo",
+      "material": "100% Linen",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-mens-shirts"
+    ],
+    "variations": [
+      {
+        "id": "var-008-1",
+        "sku": "CLO-SHT-008-ROY-S",
+        "options": {
+          "color": "Royal Indigo",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-008-2",
+        "sku": "CLO-SHT-008-ROY-M",
+        "options": {
+          "color": "Royal Indigo",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-008-3",
+        "sku": "CLO-SHT-008-LIG-S",
+        "options": {
+          "color": "Light Blue Stripe",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6041-00345-214_prod1"
+        ]
+      },
+      {
+        "id": "var-008-4",
+        "sku": "CLO-SHT-008-LIG-M",
+        "options": {
+          "color": "Light Blue Stripe",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6041-00345-214_prod1"
+        ]
+      },
+      {
+        "id": "var-008-5",
+        "sku": "CLO-SHT-008-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6041-00345-100_prod1"
+        ]
+      },
+      {
+        "id": "var-008-6",
+        "sku": "CLO-SHT-008-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6041-00345-100_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-009",
+    "name": "Chambray Denim Button-Up Shirt",
+    "description": "A new collection that celebrates our one hundred year history, inspired by our vintage archives and redesigned for today. This long-sleeve button-up shirt is in a soft denim fabric and oversized-fit silhouette. Features a classic button-down collar and embroidered crest detail.",
+    "sku": "CLO-SHT-009",
+    "slug": "chambray-denim-button-up-shirt",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6370-00378-220_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6370-00378-220_prod2"
+    ],
+    "attributes": {
+      "color": "Medium Wash",
+      "material": "Denim",
+      "fit": "Oversized",
+      "gender": "Men",
+      "care": "Machine wash cold, inside out"
+    },
+    "categoryIds": [
+      "cat-mens-shirts"
+    ],
+    "variations": [
+      {
+        "id": "var-009-1",
+        "sku": "CLO-SHT-009-MED-S",
+        "options": {
+          "color": "Medium Wash",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-009-2",
+        "sku": "CLO-SHT-009-MED-M",
+        "options": {
+          "color": "Medium Wash",
+          "size": "M"
+        }
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-010",
+    "name": "Graphic Button-Up Shirt",
+    "description": "A new collection that celebrates over a hundred years of heritage, inspired by our vintage Big Shirt archives and redesigned for today. This long-sleeve button-up shirt is in a lightweight 100% cotton fabric and relaxed-fit silhouette.",
+    "sku": "CLO-SHT-010",
+    "slug": "graphic-button-up-shirt",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6373-00382-808_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_125-6373-00382-808_prod2"
+    ],
+    "attributes": {
+      "color": "Yellow Pattern",
+      "material": "100% Cotton",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-mens-shirts"
+    ],
+    "variations": [
+      {
+        "id": "var-010-1",
+        "sku": "CLO-SHT-010-YEL-S",
+        "options": {
+          "color": "Yellow Pattern",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-010-2",
+        "sku": "CLO-SHT-010-YEL-M",
+        "options": {
+          "color": "Yellow Pattern",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-010-3",
+        "sku": "CLO-SHT-010-LIG-S",
+        "options": {
+          "color": "Light Blue Stripe",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6376-00381-226_prod1"
+        ]
+      },
+      {
+        "id": "var-010-4",
+        "sku": "CLO-SHT-010-LIG-M",
+        "options": {
+          "color": "Light Blue Stripe",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6376-00381-226_prod1"
+        ]
+      },
+      {
+        "id": "var-010-5",
+        "sku": "CLO-SHT-010-LIS-S",
+        "options": {
+          "color": "Light Pink Stripe",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6379-00379-604_prod1"
+        ]
+      },
+      {
+        "id": "var-010-6",
+        "sku": "CLO-SHT-010-LIS-M",
+        "options": {
+          "color": "Light Pink Stripe",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_125-6379-00379-604_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-011",
+    "name": "Premium Heavyweight 2.0 Graphic Tee",
+    "description": "Our comfortable short-sleeve tee in our heavyweight 275g fabric and oversized-fit silhouette, a reimagined version of our original Premium Heavyweight Tee. Features bodega-inspired graphic details at the left chest and back, and a crew neckline.",
+    "sku": "CLO-TEE-011",
+    "slug": "premium-heavyweight-2.0-graphic-tee",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_123-6097-00660-313_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_123-6097-00660-313_prod2",
+      "https://img.abercrombie.com/is/image/anf/KIC_123-6097-00660-313_prod3"
+    ],
+    "attributes": {
+      "color": "Hunter Green",
+      "material": "100% Cotton",
+      "fit": "Oversized",
+      "gender": "Men",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-mens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-011-1",
+        "sku": "CLO-TEE-011-HUN-S",
+        "options": {
+          "color": "Hunter Green",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-011-2",
+        "sku": "CLO-TEE-011-HUN-M",
+        "options": {
+          "color": "Hunter Green",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-011-3",
+        "sku": "CLO-TEE-011-NAV-S",
+        "options": {
+          "color": "Navy",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_123-6097-00660-200_prod1"
+        ]
+      },
+      {
+        "id": "var-011-4",
+        "sku": "CLO-TEE-011-NAV-M",
+        "options": {
+          "color": "Navy",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_123-6097-00660-200_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-012",
+    "name": "Essential Cropped Full-Zip Hoodie",
+    "description": "Your new favorite hoodie. In a brand-new oversized, cropped fit, this full-zip hoodie in our soft fabric is bound to keep you feeling warm and looking stylish all year.",
+    "sku": "CLO-HOD-012",
+    "slug": "essential-cropped-full-zip-hoodie",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_122-4147-00024-906_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_122-4147-00024-906_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_122-4147-00024-906_model3"
+    ],
+    "attributes": {
+      "color": "Washed Black",
+      "material": "Cotton Blend Fleece",
+      "fit": "Oversized",
+      "gender": "Men",
+      "care": "Machine wash warm"
+    },
+    "categoryIds": [
+      "cat-mens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-012-1",
+        "sku": "CLO-HOD-012-WAS-S",
+        "options": {
+          "color": "Washed Black",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-012-2",
+        "sku": "CLO-HOD-012-WAS-M",
+        "options": {
+          "color": "Washed Black",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-012-3",
+        "sku": "CLO-HOD-012-LIG-S",
+        "options": {
+          "color": "Light Heather Gray",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-5417-00052-112_prod1"
+        ]
+      },
+      {
+        "id": "var-012-4",
+        "sku": "CLO-HOD-012-LIG-M",
+        "options": {
+          "color": "Light Heather Gray",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-5417-00052-112_prod1"
+        ]
+      },
+      {
+        "id": "var-012-5",
+        "sku": "CLO-HOD-012-NAV-S",
+        "options": {
+          "color": "Navy Wash",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-5603-00074-206_prod1"
+        ]
+      },
+      {
+        "id": "var-012-6",
+        "sku": "CLO-HOD-012-NAV-M",
+        "options": {
+          "color": "Navy Wash",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-5603-00074-206_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-013",
+    "name": "Terry Script Logo Full-Zip Hoodie",
+    "description": "Comfortable full-zip hoodie in our super soft French terry fleece fabric and oversized, drop-shoulder fit. Features an embroidered script logo at the left chest, a zip-up front, side pockets and a banded hem and cuffs.",
+    "sku": "CLO-HOD-013",
+    "slug": "terry-script-logo-full-zip-hoodie",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-200_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-200_prod2"
+    ],
+    "attributes": {
+      "color": "Sapphire",
+      "material": "Cotton Terry Fleece",
+      "fit": "Oversized",
+      "gender": "Men",
+      "care": "Machine wash warm"
+    },
+    "categoryIds": [
+      "cat-mens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-013-1",
+        "sku": "CLO-HOD-013-SAP-S",
+        "options": {
+          "color": "Sapphire",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-013-2",
+        "sku": "CLO-HOD-013-SAP-M",
+        "options": {
+          "color": "Sapphire",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-013-3",
+        "sku": "CLO-HOD-013-LIG-S",
+        "options": {
+          "color": "Light Heather Gray",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-112_prod1"
+        ]
+      },
+      {
+        "id": "var-013-4",
+        "sku": "CLO-HOD-013-LIG-M",
+        "options": {
+          "color": "Light Heather Gray",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-112_prod1"
+        ]
+      },
+      {
+        "id": "var-013-5",
+        "sku": "CLO-HOD-013-GRE-S",
+        "options": {
+          "color": "Green Granite",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-322_prod1"
+        ]
+      },
+      {
+        "id": "var-013-6",
+        "sku": "CLO-HOD-013-GRE-M",
+        "options": {
+          "color": "Green Granite",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_122-6154-00119-322_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-014",
+    "name": "Tennis Scenic Crew Sweater",
+    "description": "Comfortable crew in our soft sweater-knit fabric. Features an all-over scenic tennis-inspired graphic detail, crew neckline and a banded hem and cuffs.",
+    "sku": "CLO-SWT-014",
+    "slug": "tennis-scenic-crew-sweater",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_120-6060-00677-217_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_120-6060-00677-217_prod2"
+    ],
+    "attributes": {
+      "color": "Light Blue Pattern",
+      "material": "Sweater Knit",
+      "fit": "Regular",
+      "gender": "Men",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-mens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-014-1",
+        "sku": "CLO-SWT-014-LIG-S",
+        "options": {
+          "color": "Light Blue Pattern",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-014-2",
+        "sku": "CLO-SWT-014-LIG-M",
+        "options": {
+          "color": "Light Blue Pattern",
+          "size": "M"
+        }
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-015",
+    "name": "Classic Essential Tee",
+    "description": "Our short-sleeve tee in our substantial 180g fabric. Features an updated classic-fit silhouette, a straight hem, crew neckline and an updated bound collar.",
+    "sku": "CLO-TEE-015",
+    "slug": "classic-essential-tee",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_124-5787-00798-900_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_124-5787-00798-900_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_124-5787-00798-900_model3"
+    ],
+    "attributes": {
+      "color": "Black",
+      "material": "100% Cotton",
+      "fit": "Classic",
+      "gender": "Men",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-mens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-015-1",
+        "sku": "CLO-TEE-015-BLA-S",
+        "options": {
+          "color": "Black",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-015-2",
+        "sku": "CLO-TEE-015-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-015-3",
+        "sku": "CLO-TEE-015-COO-S",
+        "options": {
+          "color": "Cool Gray Wash",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_124-5789-00802-958_prod1"
+        ]
+      },
+      {
+        "id": "var-015-4",
+        "sku": "CLO-TEE-015-COO-M",
+        "options": {
+          "color": "Cool Gray Wash",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_124-5789-00802-958_prod1"
+        ]
+      },
+      {
+        "id": "var-015-5",
+        "sku": "CLO-TEE-015-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_124-5788-00803-100_prod1"
+        ]
+      },
+      {
+        "id": "var-015-6",
+        "sku": "CLO-TEE-015-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_124-5788-00803-100_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-016",
+    "name": "Baggy Jean",
+    "description": "Our baggy jeans, relaxed and baggy-fitting through the leg with a slight puddle at the shoe, in our 100% cotton no-stretch fabric and broken-in denim feel. Features an ecru wash and clean hem.",
+    "sku": "CLO-JEA-016",
+    "slug": "baggy-jean",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5434-00488-110_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5434-00488-110_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5434-00488-110_model3"
+    ],
+    "attributes": {
+      "color": "Cream",
+      "material": "100% Cotton Denim",
+      "fit": "Baggy",
+      "gender": "Men",
+      "care": "Machine wash cold, inside out"
+    },
+    "categoryIds": [
+      "cat-mens-bottoms"
+    ],
+    "variations": [
+      {
+        "id": "var-016-1",
+        "sku": "CLO-JEA-016-CRE-W30",
+        "options": {
+          "color": "Cream",
+          "size": "W30"
+        }
+      },
+      {
+        "id": "var-016-2",
+        "sku": "CLO-JEA-016-CRE-W32",
+        "options": {
+          "color": "Cream",
+          "size": "W32"
+        }
+      },
+      {
+        "id": "var-016-3",
+        "sku": "CLO-JEA-016-KHA-W30",
+        "options": {
+          "color": "Khaki",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-6983-00580-420_prod1"
+        ]
+      },
+      {
+        "id": "var-016-4",
+        "sku": "CLO-JEA-016-KHA-W32",
+        "options": {
+          "color": "Khaki",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-6983-00580-420_prod1"
+        ]
+      },
+      {
+        "id": "var-016-5",
+        "sku": "CLO-JEA-016-DAR-W30",
+        "options": {
+          "color": "Dark Wash",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-6963-00578-900_prod1"
+        ]
+      },
+      {
+        "id": "var-016-6",
+        "sku": "CLO-JEA-016-DAR-W32",
+        "options": {
+          "color": "Dark Wash",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-6963-00578-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-017",
+    "name": "Linen-Blend Relaxed Straight Trouser",
+    "description": "Our classic pant in a cleaned up silhouette and soft linen-blend fabric. Fits relaxed through the thigh and straight through the leg.",
+    "sku": "CLO-TRO-017",
+    "slug": "linen-blend-relaxed-straight-trouser",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6019-00117-412_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6019-00117-412_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6019-00117-412_model3"
+    ],
+    "attributes": {
+      "color": "Oatmeal",
+      "material": "Linen Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-mens-bottoms"
+    ],
+    "variations": [
+      {
+        "id": "var-017-1",
+        "sku": "CLO-TRO-017-OAT-W30",
+        "options": {
+          "color": "Oatmeal",
+          "size": "W30"
+        }
+      },
+      {
+        "id": "var-017-2",
+        "sku": "CLO-TRO-017-OAT-W32",
+        "options": {
+          "color": "Oatmeal",
+          "size": "W32"
+        }
+      },
+      {
+        "id": "var-017-3",
+        "sku": "CLO-TRO-017-BLA-W30",
+        "options": {
+          "color": "Black",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6079-00131-900_prod1"
+        ]
+      },
+      {
+        "id": "var-017-4",
+        "sku": "CLO-TRO-017-BLA-W32",
+        "options": {
+          "color": "Black",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6079-00131-900_prod1"
+        ]
+      },
+      {
+        "id": "var-017-5",
+        "sku": "CLO-TRO-017-DAR-W30",
+        "options": {
+          "color": "Dark Sage & Olive Gray",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6025-00119-330_prod1"
+        ]
+      },
+      {
+        "id": "var-017-6",
+        "sku": "CLO-TRO-017-DAR-W32",
+        "options": {
+          "color": "Dark Sage & Olive Gray",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6025-00119-330_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-018",
+    "name": "Loose Jean",
+    "description": "Our classic loose jeans that are relaxed and loose-fitting through the hip and thigh in our 100% cotton no-stretch fabric and broken-in denim feel. Features a white wash and clean hem.",
+    "sku": "CLO-JEA-018",
+    "slug": "loose-jean",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5431-00075-100_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5431-00075-100_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_131-5431-00075-100_model3"
+    ],
+    "attributes": {
+      "color": "White",
+      "material": "100% Cotton Denim",
+      "fit": "Loose",
+      "gender": "Men",
+      "care": "Machine wash cold, inside out"
+    },
+    "categoryIds": [
+      "cat-mens-bottoms"
+    ],
+    "variations": [
+      {
+        "id": "var-018-1",
+        "sku": "CLO-JEA-018-WHI-W30",
+        "options": {
+          "color": "White",
+          "size": "W30"
+        }
+      },
+      {
+        "id": "var-018-2",
+        "sku": "CLO-JEA-018-WHI-W32",
+        "options": {
+          "color": "White",
+          "size": "W32"
+        }
+      },
+      {
+        "id": "var-018-3",
+        "sku": "CLO-JEA-018-LIG-W30",
+        "options": {
+          "color": "Light Wash",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-2004-2476-280_prod1"
+        ]
+      },
+      {
+        "id": "var-018-4",
+        "sku": "CLO-JEA-018-LIG-W32",
+        "options": {
+          "color": "Light Wash",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_131-2004-2476-280_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-019",
+    "name": "Menswear Baggy Trouser",
+    "description": "Our classic pant in a cleaned up silhouette and everyday menswear fabric. Fits wide through the leg and sits higher at the ankle.",
+    "sku": "CLO-TRO-019",
+    "slug": "menswear-baggy-trouser",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_130-5115-00182-900_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-5115-00182-900_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-5115-00182-900_model3"
+    ],
+    "attributes": {
+      "color": "Black",
+      "material": "Cotton Blend",
+      "fit": "Baggy",
+      "gender": "Men",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-mens-bottoms"
+    ],
+    "variations": [
+      {
+        "id": "var-019-1",
+        "sku": "CLO-TRO-019-BLA-W30",
+        "options": {
+          "color": "Black",
+          "size": "W30"
+        }
+      },
+      {
+        "id": "var-019-2",
+        "sku": "CLO-TRO-019-BLA-W32",
+        "options": {
+          "color": "Black",
+          "size": "W32"
+        }
+      },
+      {
+        "id": "var-019-3",
+        "sku": "CLO-TRO-019-DAR-W30",
+        "options": {
+          "color": "Dark Brown",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-5112-00199-400_prod1"
+        ]
+      },
+      {
+        "id": "var-019-4",
+        "sku": "CLO-TRO-019-DAR-W32",
+        "options": {
+          "color": "Dark Brown",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-5112-00199-400_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-020",
+    "name": "Linen-Blend Baggy Trouser",
+    "description": "Our classic pant in a cleaned up silhouette and lightweight linen-blend fabric. Fits wide through the leg and sits higher at the ankle.",
+    "sku": "CLO-TRO-020",
+    "slug": "linen-blend-baggy-trouser",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6051-00302-412_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6051-00302-412_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_130-6051-00302-412_model3"
+    ],
+    "attributes": {
+      "color": "Light Beige",
+      "material": "Linen Blend",
+      "fit": "Baggy",
+      "gender": "Men",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-mens-bottoms"
+    ],
+    "variations": [
+      {
+        "id": "var-020-1",
+        "sku": "CLO-TRO-020-LIG-W30",
+        "options": {
+          "color": "Light Beige",
+          "size": "W30"
+        }
+      },
+      {
+        "id": "var-020-2",
+        "sku": "CLO-TRO-020-LIG-W32",
+        "options": {
+          "color": "Light Beige",
+          "size": "W32"
+        }
+      },
+      {
+        "id": "var-020-3",
+        "sku": "CLO-TRO-020-BLA-W30",
+        "options": {
+          "color": "Black",
+          "size": "W30"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6050-00301-900_prod1"
+        ]
+      },
+      {
+        "id": "var-020-4",
+        "sku": "CLO-TRO-020-BLA-W32",
+        "options": {
+          "color": "Black",
+          "size": "W32"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_130-6050-00301-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-021",
+    "name": "Wool-Blend Mac Coat",
+    "description": "Our single-breasted mac coat in our soft wool-blend fabric and longer length with a relaxed-fit silhouette. Features classic lapel detail, tonal trims and lining, back vent detail, front-button closure, side pockets and interior chest pocket.",
+    "sku": "CLO-COA-021",
+    "slug": "wool-blend-mac-coat",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6910-00076-908_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6910-00076-908_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6910-00076-908_model3"
+    ],
+    "attributes": {
+      "color": "Black Herringbone",
+      "material": "Wool Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Dry clean only"
+    },
+    "categoryIds": [
+      "cat-mens-outerwear"
+    ],
+    "variations": [
+      {
+        "id": "var-021-1",
+        "sku": "CLO-COA-021-BLA-M",
+        "options": {
+          "color": "Black Herringbone",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-021-2",
+        "sku": "CLO-COA-021-BLA-L",
+        "options": {
+          "color": "Black Herringbone",
+          "size": "L"
+        }
+      },
+      {
+        "id": "var-021-3",
+        "sku": "CLO-COA-021-LIG-M",
+        "options": {
+          "color": "Light Brown Pattern",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6910-00075-408_prod1"
+        ]
+      },
+      {
+        "id": "var-021-4",
+        "sku": "CLO-COA-021-LIG-L",
+        "options": {
+          "color": "Light Brown Pattern",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6910-00075-408_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-022",
+    "name": "McLaren Varsity Bomber Jacket",
+    "description": "Classic bomber jacket in a soft faux wool fabric and relaxed-fit silhouette, featuring McLaren varsity-inspired embroidered graphic patch details throughout, side pockets, snap-up front and tipping details at elastic cuffs and waistband.",
+    "sku": "CLO-JKT-022",
+    "slug": "mclaren-varsity-bomber-jacket",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_132-4105-00116-918_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-4105-00116-918_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-4105-00116-918_model3"
+    ],
+    "attributes": {
+      "color": "Black",
+      "material": "Faux Wool",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Dry clean only"
+    },
+    "categoryIds": [
+      "cat-mens-outerwear"
+    ],
+    "variations": [
+      {
+        "id": "var-022-1",
+        "sku": "CLO-JKT-022-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-022-2",
+        "sku": "CLO-JKT-022-BLA-L",
+        "options": {
+          "color": "Black",
+          "size": "L"
+        }
+      },
+      {
+        "id": "var-022-3",
+        "sku": "CLO-JKT-022-DEE-M",
+        "options": {
+          "color": "Deep Navy Pattern",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-4097-00145-208_prod1"
+        ]
+      },
+      {
+        "id": "var-022-4",
+        "sku": "CLO-JKT-022-DEE-L",
+        "options": {
+          "color": "Deep Navy Pattern",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-4097-00145-208_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-023",
+    "name": "Hooded Puffer",
+    "description": "Our heavyweight puffer jacket in a cotton-blend fabric and relaxed-fit silhouette. Features fill to protect against the elements, side zip pockets with exterior chest zipper pocket, zip-up front, cinched cuffs and a detachable hood.",
+    "sku": "CLO-JKT-023",
+    "slug": "hooded-puffer",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6929-00326-400_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6929-00326-400_prod2",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6929-00326-400_prod3"
+    ],
+    "attributes": {
+      "color": "Chocolate Brown",
+      "material": "Cotton Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Spot clean only"
+    },
+    "categoryIds": [
+      "cat-mens-outerwear"
+    ],
+    "variations": [
+      {
+        "id": "var-023-1",
+        "sku": "CLO-JKT-023-CHO-M",
+        "options": {
+          "color": "Chocolate Brown",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-023-2",
+        "sku": "CLO-JKT-023-CHO-L",
+        "options": {
+          "color": "Chocolate Brown",
+          "size": "L"
+        }
+      },
+      {
+        "id": "var-023-3",
+        "sku": "CLO-JKT-023-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6929-00326-900_prod1"
+        ]
+      },
+      {
+        "id": "var-023-4",
+        "sku": "CLO-JKT-023-BLA-L",
+        "options": {
+          "color": "Black",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6929-00326-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-024",
+    "name": "Vintage-Inspired Vegan Leather Bomber Jacket",
+    "description": "Our vintage-inspired bomber jacket in a vegan leather fabric and relaxed-fit silhouette. Features a classic fold-down collar, zip-up front, seaming details, functional front pockets with side pocket entry and banded hem and cuffs.",
+    "sku": "CLO-JKT-024",
+    "slug": "vintage-inspired-vegan-leather-bomber-jacket",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6923-00330-400_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6923-00330-400_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6923-00330-400_model3"
+    ],
+    "attributes": {
+      "color": "Brown",
+      "material": "Vegan Leather",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Wipe clean"
+    },
+    "categoryIds": [
+      "cat-mens-outerwear"
+    ],
+    "variations": [
+      {
+        "id": "var-024-1",
+        "sku": "CLO-JKT-024-BRO-M",
+        "options": {
+          "color": "Brown",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-024-2",
+        "sku": "CLO-JKT-024-BRO-L",
+        "options": {
+          "color": "Brown",
+          "size": "L"
+        }
+      },
+      {
+        "id": "var-024-3",
+        "sku": "CLO-JKT-024-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6923-00340-900_prod1"
+        ]
+      },
+      {
+        "id": "var-024-4",
+        "sku": "CLO-JKT-024-BLA-L",
+        "options": {
+          "color": "Black",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6923-00340-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-025",
+    "name": "Wool-Blend Trucker Jacket",
+    "description": "Our versatile trucker jacket in our new wool-blend fabric and a relaxed-fit silhouette. Features side pockets, zip-up front, fold-down collar with a convertible mockneck button closure and lightweight interior lining.",
+    "sku": "CLO-JKT-025",
+    "slug": "wool-blend-trucker-jacket",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00317-900_prod1",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00317-900_prod2",
+      "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00317-900_prod3"
+    ],
+    "attributes": {
+      "color": "Gray And Black",
+      "material": "Wool Blend",
+      "fit": "Relaxed",
+      "gender": "Men",
+      "care": "Dry clean only"
+    },
+    "categoryIds": [
+      "cat-mens-outerwear"
+    ],
+    "variations": [
+      {
+        "id": "var-025-1",
+        "sku": "CLO-JKT-025-GRA-M",
+        "options": {
+          "color": "Gray And Black",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-025-2",
+        "sku": "CLO-JKT-025-GRA-L",
+        "options": {
+          "color": "Gray And Black",
+          "size": "L"
+        }
+      },
+      {
+        "id": "var-025-3",
+        "sku": "CLO-JKT-025-BRO-M",
+        "options": {
+          "color": "Brown Plaid",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00316-408_prod1"
+        ]
+      },
+      {
+        "id": "var-025-4",
+        "sku": "CLO-JKT-025-BRO-L",
+        "options": {
+          "color": "Brown Plaid",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00316-408_prod1"
+        ]
+      },
+      {
+        "id": "var-025-5",
+        "sku": "CLO-JKT-025-DAR-M",
+        "options": {
+          "color": "Dark Brown",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00315-400_prod1"
+        ]
+      },
+      {
+        "id": "var-025-6",
+        "sku": "CLO-JKT-025-DAR-L",
+        "options": {
+          "color": "Dark Brown",
+          "size": "L"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_132-6912-00315-400_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-026",
+    "name": "Essential Everyday Easy Tee",
+    "description": "Our comfy short-sleeve tee in a cotton jersey fabric, perfect for everyday wear. Features an easy-fit silhouette, crew neckline and straight hem.",
+    "sku": "CLO-TEE-026",
+    "slug": "essential-everyday-easy-tee",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_139-6475-00425-100_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_139-6475-00425-100_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_139-6475-00425-100_model3"
+    ],
+    "attributes": {
+      "color": "White",
+      "material": "100% Cotton",
+      "fit": "Easy",
+      "gender": "Women",
+      "care": "Machine wash cold, tumble dry low"
+    },
+    "categoryIds": [
+      "cat-womens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-026-1",
+        "sku": "CLO-TEE-026-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-026-2",
+        "sku": "CLO-TEE-026-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-026-3",
+        "sku": "CLO-TEE-026-BLA-S",
+        "options": {
+          "color": "Black",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-6476-00426-900_prod1"
+        ]
+      },
+      {
+        "id": "var-026-4",
+        "sku": "CLO-TEE-026-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-6476-00426-900_prod1"
+        ]
+      },
+      {
+        "id": "var-026-5",
+        "sku": "CLO-TEE-026-BRO-S",
+        "options": {
+          "color": "Brown Stripe",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-6478-00427-405_prod1"
+        ]
+      },
+      {
+        "id": "var-026-6",
+        "sku": "CLO-TEE-026-BRO-M",
+        "options": {
+          "color": "Brown Stripe",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-6478-00427-405_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-027",
+    "name": "The A&F Bella Bra-Free Linen-Blend Cami",
+    "description": "Our collection built to make going bra-free that much smoother. This flattering cami top is in our soft linen-blend fabric and body-skimming silhouette. Features a seamed-in bra with removable pads, adjustable tie detail, V-neckline and adjustable cami straps.",
+    "sku": "CLO-TOP-027",
+    "slug": "the-aandf-bella-bra-free-linen-blend-cami",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6049-00451-100_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6049-00451-100_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6049-00451-100_model3"
+    ],
+    "attributes": {
+      "color": "White",
+      "material": "Linen Blend",
+      "fit": "Body-Skimming",
+      "gender": "Women",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-027-1",
+        "sku": "CLO-TOP-027-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-027-2",
+        "sku": "CLO-TOP-027-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-027-3",
+        "sku": "CLO-TOP-027-OAT-S",
+        "options": {
+          "color": "Oatmeal",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6058-00444-185_prod1"
+        ]
+      },
+      {
+        "id": "var-027-4",
+        "sku": "CLO-TOP-027-OAT-M",
+        "options": {
+          "color": "Oatmeal",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6058-00444-185_prod1"
+        ]
+      },
+      {
+        "id": "var-027-5",
+        "sku": "CLO-TOP-027-BLA-S",
+        "options": {
+          "color": "Black",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6057-00452-900_prod1"
+        ]
+      },
+      {
+        "id": "var-027-6",
+        "sku": "CLO-TOP-027-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6057-00452-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-028",
+    "name": "Linen-Blend Smocked Tie-Front Top",
+    "description": "Flattering top in our comfortable linen-blend fabric. Features adjustable tie-front detail, all-over smocked detail, ruffle hem and a V-neckline.",
+    "sku": "CLO-TOP-028",
+    "slug": "linen-blend-smocked-tie-front-top",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6339-00559-401_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6339-00559-401_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_140-6339-00559-401_model3"
+    ],
+    "attributes": {
+      "color": "Oatmeal",
+      "material": "Linen Blend",
+      "fit": "Relaxed",
+      "gender": "Women",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-028-1",
+        "sku": "CLO-TOP-028-OAT-S",
+        "options": {
+          "color": "Oatmeal",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-028-2",
+        "sku": "CLO-TOP-028-OAT-M",
+        "options": {
+          "color": "Oatmeal",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-028-3",
+        "sku": "CLO-TOP-028-DAR-S",
+        "options": {
+          "color": "Dark Brown",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6338-00558-480_prod1"
+        ]
+      },
+      {
+        "id": "var-028-4",
+        "sku": "CLO-TOP-028-DAR-M",
+        "options": {
+          "color": "Dark Brown",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6338-00558-480_prod1"
+        ]
+      },
+      {
+        "id": "var-028-5",
+        "sku": "CLO-TOP-028-BLA-S",
+        "options": {
+          "color": "Black",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6258-00534-900_prod1"
+        ]
+      },
+      {
+        "id": "var-028-6",
+        "sku": "CLO-TOP-028-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_140-6258-00534-900_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-029",
+    "name": "Bra-Free 90s Cami",
+    "description": "Our collection built to make going bra-free that much smoother. Slim-fitting 90's-style top in our cotton-blend seamless fabric, featuring removable pads for added coverage, adjustable straps, and a square neckline.",
+    "sku": "CLO-TOP-029",
+    "slug": "bra-free-90s-cami",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-112_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-112_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-112_model3"
+    ],
+    "attributes": {
+      "color": "Light Gray",
+      "material": "Cotton Blend",
+      "fit": "Slim",
+      "gender": "Women",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-029-1",
+        "sku": "CLO-TOP-029-LIG-S",
+        "options": {
+          "color": "Light Gray",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-029-2",
+        "sku": "CLO-TOP-029-LIG-M",
+        "options": {
+          "color": "Light Gray",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-029-3",
+        "sku": "CLO-TOP-029-BLA-S",
+        "options": {
+          "color": "Black",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-900_prod1"
+        ]
+      },
+      {
+        "id": "var-029-4",
+        "sku": "CLO-TOP-029-BLA-M",
+        "options": {
+          "color": "Black",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-900_prod1"
+        ]
+      },
+      {
+        "id": "var-029-5",
+        "sku": "CLO-TOP-029-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-100_prod1"
+        ]
+      },
+      {
+        "id": "var-029-6",
+        "sku": "CLO-TOP-029-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_139-5657-00383-100_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-030",
+    "name": "Sunday Terry Off-The-Shoulder Top",
+    "description": "Our comfy long-sleeve top in our soft French terry fleece fabric and Sunday silhouette. Features a slash neckline, on-trend seaming details and banded cuffs.",
+    "sku": "CLO-TOP-030",
+    "slug": "sunday-terry-off-the-shoulder-top",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_152-6364-00697-420_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_152-6364-00697-420_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_152-6364-00697-420_model3"
+    ],
+    "attributes": {
+      "color": "Taupe",
+      "material": "Cotton Terry Fleece",
+      "fit": "Relaxed",
+      "gender": "Women",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-tops"
+    ],
+    "variations": [
+      {
+        "id": "var-030-1",
+        "sku": "CLO-TOP-030-TAU-S",
+        "options": {
+          "color": "Taupe",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-030-2",
+        "sku": "CLO-TOP-030-TAU-M",
+        "options": {
+          "color": "Taupe",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-030-3",
+        "sku": "CLO-TOP-030-MIS-S",
+        "options": {
+          "color": "Misty Green",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_152-6172-00650-210_prod1"
+        ]
+      },
+      {
+        "id": "var-030-4",
+        "sku": "CLO-TOP-030-MIS-M",
+        "options": {
+          "color": "Misty Green",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_152-6172-00650-210_prod1"
+        ]
+      },
+      {
+        "id": "var-030-5",
+        "sku": "CLO-TOP-030-YEL-S",
+        "options": {
+          "color": "Yellow",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_152-6171-00649-811_prod1"
+        ]
+      },
+      {
+        "id": "var-030-6",
+        "sku": "CLO-TOP-030-YEL-M",
+        "options": {
+          "color": "Yellow",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_152-6171-00649-811_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-031",
+    "name": "Bra-Free Lace Button-Through Midi Dress",
+    "description": "Flattering midi dress in our sleek textured silk fabric, featuring lace details throughout, functional buttons for multiple ways to style, and a seamed-in bra with removable pads to go bra-free.",
+    "sku": "CLO-DRS-031",
+    "slug": "bra-free-lace-button-through-midi-dress",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7322-00419-480_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7322-00419-480_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7322-00419-480_model3"
+    ],
+    "attributes": {
+      "color": "Mahogany",
+      "material": "Silk Blend",
+      "fit": "A-Line",
+      "gender": "Women",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-dresses"
+    ],
+    "variations": [
+      {
+        "id": "var-031-1",
+        "sku": "CLO-DRS-031-MAH-S",
+        "options": {
+          "color": "Mahogany",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-031-2",
+        "sku": "CLO-DRS-031-MAH-M",
+        "options": {
+          "color": "Mahogany",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-031-3",
+        "sku": "CLO-DRS-031-COO-S",
+        "options": {
+          "color": "Cool Blush",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7323-00420-620_prod1"
+        ]
+      },
+      {
+        "id": "var-031-4",
+        "sku": "CLO-DRS-031-COO-M",
+        "options": {
+          "color": "Cool Blush",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7323-00420-620_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-032",
+    "name": "100% Cotton A&F Bra-Free Dylan Midi Dress",
+    "description": "Our collection built to make going bra-free that much smoother. This flattering midi dress is in our classic poplin fabric. Features a scoop neckline with picot-trim detail, back smocking, adjustable straps, a dipped waistline with a flowy skirt and a seamed-in bra.",
+    "sku": "CLO-DRS-032",
+    "slug": "100pct-cotton-aandf-bra-free-dylan-midi-dress",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7070-00433-100_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7070-00433-100_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7070-00433-100_model3"
+    ],
+    "attributes": {
+      "color": "White",
+      "material": "100% Cotton Poplin",
+      "fit": "Flowy",
+      "gender": "Women",
+      "care": "Machine wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-dresses"
+    ],
+    "variations": [
+      {
+        "id": "var-032-1",
+        "sku": "CLO-DRS-032-WHI-S",
+        "options": {
+          "color": "White",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-032-2",
+        "sku": "CLO-DRS-032-WHI-M",
+        "options": {
+          "color": "White",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-032-3",
+        "sku": "CLO-DRS-032-RED-S",
+        "options": {
+          "color": "Red Dot",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7445-00437-516_prod1"
+        ]
+      },
+      {
+        "id": "var-032-4",
+        "sku": "CLO-DRS-032-RED-M",
+        "options": {
+          "color": "Red Dot",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7445-00437-516_prod1"
+        ]
+      },
+      {
+        "id": "var-032-5",
+        "sku": "CLO-DRS-032-RIC-S",
+        "options": {
+          "color": "Rich Ruby",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7621-00463-500_prod1"
+        ]
+      },
+      {
+        "id": "var-032-6",
+        "sku": "CLO-DRS-032-RIC-M",
+        "options": {
+          "color": "Rich Ruby",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-7621-00463-500_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-033",
+    "name": "Bra-Free Ruched Flowy Maxi Dress",
+    "description": "Our collection built to make going bra-free that much smoother. Flattering maxi dress in our elevated crinkle chiffon, featuring a flowy skirt, plunge neckline, and drop waist detail, plus a seamed-in bra with removable pads.",
+    "sku": "CLO-DRS-033",
+    "slug": "bra-free-ruched-flowy-maxi-dress",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7190-00584-815_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7190-00584-815_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7190-00584-815_model3"
+    ],
+    "attributes": {
+      "color": "Golden",
+      "material": "Chiffon",
+      "fit": "Flowy",
+      "gender": "Women",
+      "care": "Hand wash cold, line dry"
+    },
+    "categoryIds": [
+      "cat-womens-dresses"
+    ],
+    "variations": [
+      {
+        "id": "var-033-1",
+        "sku": "CLO-DRS-033-GOL-S",
+        "options": {
+          "color": "Golden",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-033-2",
+        "sku": "CLO-DRS-033-GOL-M",
+        "options": {
+          "color": "Golden",
+          "size": "M"
+        }
+      },
+      {
+        "id": "var-033-3",
+        "sku": "CLO-DRS-033-PIN-S",
+        "options": {
+          "color": "Pink Floral",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-6797-00583-629_prod1"
+        ]
+      },
+      {
+        "id": "var-033-4",
+        "sku": "CLO-DRS-033-PIN-M",
+        "options": {
+          "color": "Pink Floral",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-6797-00583-629_prod1"
+        ]
+      },
+      {
+        "id": "var-033-5",
+        "sku": "CLO-DRS-033-TEA-S",
+        "options": {
+          "color": "Teal",
+          "size": "S"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-6797-00583-280_prod1"
+        ]
+      },
+      {
+        "id": "var-033-6",
+        "sku": "CLO-DRS-033-TEA-M",
+        "options": {
+          "color": "Teal",
+          "size": "M"
+        },
+        "images": [
+          "https://img.abercrombie.com/is/image/anf/KIC_159-6797-00583-280_prod1"
+        ]
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-034",
+    "name": "A&F Dylan Bra-Free Denim Midi Dress",
+    "description": "Our collection built to make going bra-free that much smoother. Flattering midi dress is in our soft denim fabric, featuring a picot-trimmed scoop neckline, back smocking and a dipped waistline with a flowy skirt.",
+    "sku": "CLO-DRS-034",
+    "slug": "aandf-dylan-bra-free-denim-midi-dress",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7609-00458-276_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7609-00458-276_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7609-00458-276_model3"
+    ],
+    "attributes": {
+      "color": "Dark Wash",
+      "material": "Denim",
+      "fit": "A-Line",
+      "gender": "Women",
+      "care": "Machine wash cold, inside out"
+    },
+    "categoryIds": [
+      "cat-womens-dresses"
+    ],
+    "variations": [
+      {
+        "id": "var-034-1",
+        "sku": "CLO-DRS-034-DAR-S",
+        "options": {
+          "color": "Dark Wash",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-034-2",
+        "sku": "CLO-DRS-034-DAR-M",
+        "options": {
+          "color": "Dark Wash",
+          "size": "M"
+        }
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "id": "prod-035",
+    "name": "Chambray Bra-Free Button-Through Smocked Mini Dress",
+    "description": "Flirty mini dress in our Chambray fabric, featuring buttons down the front of the body, smocking details on the bodice, adjustable straps, and a seamed-in bra with removable pads to go bra-free.",
+    "sku": "CLO-DRS-035",
+    "slug": "chambray-bra-free-button-through-smocked-mini-dress",
+    "images": [
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7294-00968-276_model1",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7294-00968-276_model2",
+      "https://img.abercrombie.com/is/image/anf/KIC_159-7294-00968-276_model3"
+    ],
+    "attributes": {
+      "color": "Dark Wash",
+      "material": "Chambray Cotton",
+      "fit": "Mini",
+      "gender": "Women",
+      "care": "Machine wash cold, inside out"
+    },
+    "categoryIds": [
+      "cat-womens-dresses"
+    ],
+    "variations": [
+      {
+        "id": "var-035-1",
+        "sku": "CLO-DRS-035-DAR-S",
+        "options": {
+          "color": "Dark Wash",
+          "size": "S"
+        }
+      },
+      {
+        "id": "var-035-2",
+        "sku": "CLO-DRS-035-DAR-M",
+        "options": {
+          "color": "Dark Wash",
+          "size": "M"
+        }
+      }
+    ],
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
+  }
+]

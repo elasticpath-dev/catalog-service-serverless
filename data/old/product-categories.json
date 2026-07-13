@@ -1,0 +1,7 @@
+[
+  { "categoryId": "cat-mens-shirts", "productId": "prod-001" },
+  { "categoryId": "cat-mens-bottoms", "productId": "prod-002" },
+  { "categoryId": "cat-mens-tops", "productId": "prod-003" },
+  { "categoryId": "cat-womens-dresses", "productId": "prod-004" },
+  { "categoryId": "cat-mens-outerwear", "productId": "prod-005" }
+]
