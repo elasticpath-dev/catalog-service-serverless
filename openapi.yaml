@@ -75,7 +75,9 @@ paths:
     get:
       tags: [Products]
       summary: Search a product by exactly one of id, sku, or slug
-      description: The sku parameter matches the parent product sku only (variation skus are not searchable).
+      description: |
+        Exact-match lookup. The sku and slug parameters match the parent product first;
+        a sku or slug belonging to a variation returns that variation with parent product context.
       operationId: searchProducts
       parameters:
         - name: id
@@ -84,17 +86,23 @@ paths:
         - name: sku
           in: query
           schema: { type: string }
+          description: Product sku or variation sku
         - name: slug
           in: query
           schema: { type: string }
+          description: Product slug or variation slug
         - $ref: '#/components/parameters/currency'
       responses:
         '200':
-          description: Matching product with prices on the product and every variation
+          description: |
+            Matching product with prices on the product and every variation.
+            When the sku or slug matched a variation, returns the variation detail instead.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductWithAllPrices'
+                oneOf:
+                  - $ref: '#/components/schemas/ProductWithAllPrices'
+                  - $ref: '#/components/schemas/VariationDetail'
         '400':
           $ref: '#/components/responses/BadRequest'
         '404':
@@ -106,19 +114,25 @@ paths:
         in: path
         required: true
         schema: { type: string }
+        description: Product id or slug, or a variation sku/slug to fetch a single variation with parent product context
     get:
       tags: [Products]
-      summary: Get a product by id (PDP)
+      summary: Get a product by id or slug, or a variation by its sku or slug (PDP)
       operationId: getProduct
       parameters:
         - $ref: '#/components/parameters/currency'
       responses:
         '200':
-          description: Product with prices on the product and every variation (variation fallback applied)
+          description: |
+            Product with prices on the product and every variation (variation fallback applied).
+            When the path parameter is a variation sku, returns the variation detail instead:
+            parent product name/description plus the variation's sku, slug, images, and prices.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductWithAllPrices'
+                oneOf:
+                  - $ref: '#/components/schemas/ProductWithAllPrices'
+                  - $ref: '#/components/schemas/VariationDetail'
         '404':
           $ref: '#/components/responses/NotFound'
     put:
@@ -364,7 +378,10 @@ paths:
     get:
       tags: [Prices]
       summary: Get raw price rows for a sku
-      description: No parent-product fallback here — fallback is applied on product responses only.
+      description: |
+        Looks up rows for the given sku. If none exist (or none in the requested
+        currency) and the sku belongs to a product variation, falls back to the
+        parent product's price rows.
       operationId: getPrices
       parameters:
         - name: sku
@@ -475,6 +492,9 @@ components:
         sku:
           type: string
           description: Variation sku, unique within the product
+        slug:
+          type: string
+          description: Variation slug (e.g. twill-button-up-shirt-brick-red-s); derived from the product slug + options when absent
         options:
           type: object
           additionalProperties: { type: string }
@@ -550,6 +570,40 @@ components:
               items:
                 $ref: '#/components/schemas/PriceView'
               description: Variation prices; currencies without a variation row inherit the parent product price
+
+    VariationDetail:
+      type: object
+      description: A single variation resolved by its sku, with parent product context
+      required: [productId, productSlug, name, description, id, sku, slug, options, images, prices]
+      properties:
+        productId: { type: string, example: prod-006 }
+        productSlug: { type: string, example: twill-button-up-shirt }
+        name:
+          type: string
+          description: Parent product name
+          example: Twill Button-Up Shirt
+        description:
+          type: string
+          description: Parent product description
+        id: { type: string, example: var-006-1 }
+        sku: { type: string, example: CLO-SHT-006-BRI-S }
+        slug:
+          type: string
+          description: The variation's stored slug; derived from the product slug + options when absent
+          example: twill-button-up-shirt-brick-red-s
+        options:
+          type: object
+          additionalProperties: { type: string }
+          example: { color: Brick Red, size: S }
+        images:
+          type: array
+          items: { type: string }
+          description: Variation images, falling back to the parent product images
+        prices:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceView'
+          description: Variation prices; currencies without a variation row inherit the parent product price
 
     ProductWithAllPrices:
       allOf:

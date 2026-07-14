@@ -8,6 +8,7 @@ const slugSchema = z
 const variationSchema = z.object({
   id: z.string().min(1).optional(),
   sku: z.string().min(1),
+  slug: slugSchema.optional(),
   options: z
     .record(z.string())
     .refine((o) => Object.keys(o).length > 0, 'variation must have at least one option (e.g. size, color)'),

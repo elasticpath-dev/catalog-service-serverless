@@ -34,6 +34,29 @@ export async function getProductBySku(sku: string): Promise<Product | undefined>
   return result.Items?.[0] as Product | undefined;
 }
 
+/**
+ * Finds the product owning the variation whose sku or slug matches. Variations live
+ * inside the product item's `variations` list, so they cannot be indexed — this is a
+ * paginated scan with an in-memory match. Fine for a small catalog; a sku/slug ->
+ * productId lookup table would be needed at scale.
+ */
+export async function getProductByVariationSkuOrSlug(
+  skuOrSlug: string,
+): Promise<Product | undefined> {
+  let startKey: Record<string, unknown> | undefined;
+  do {
+    const result = await docClient.send(
+      new ScanCommand({ TableName: TABLES.products, ExclusiveStartKey: startKey }),
+    );
+    const match = ((result.Items ?? []) as Product[]).find((p) =>
+      (p.variations ?? []).some((v) => v.sku === skuOrSlug || v.slug === skuOrSlug),
+    );
+    if (match) return match;
+    startKey = result.LastEvaluatedKey;
+  } while (startKey);
+  return undefined;
+}
+
 export async function getProductBySlug(slug: string): Promise<Product | undefined> {
   const result = await docClient.send(
     new QueryCommand({

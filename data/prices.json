@@ -214,5 +214,13 @@
     "listPrice": 5500,
     "createdAt": "2026-07-13T00:00:00.000Z",
     "updatedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "sku": "CLO-TEE-026-WHI-M",
+    "currency": "USD",
+    "listPrice": 2000,
+    "salePrice": 1800,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z"
   }
 ]

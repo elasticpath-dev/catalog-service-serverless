@@ -44,6 +44,19 @@ export async function attachProductPrices(
   }));
 }
 
+/** Price views for a single variation, with the parent-product fallback applied. */
+export async function getVariationPriceViews(
+  product: Product,
+  variation: ProductVariation,
+  currency?: string,
+): Promise<PriceView[]> {
+  const bySku = await getPricesForSkus([product.sku, variation.sku]);
+  return toViews(
+    mergeWithFallback(bySku.get(variation.sku) ?? [], bySku.get(product.sku) ?? []),
+    currency,
+  );
+}
+
 /** Full PDP enrichment: product prices plus per-variation prices with parent fallback. */
 export async function attachAllPrices(
   product: Product,
