@@ -13,6 +13,7 @@ export class ApiError extends Error {
 export const notFound = (message: string) => new ApiError(404, 'not_found', message);
 export const badRequest = (message: string) => new ApiError(400, 'bad_request', message);
 export const conflict = (message: string) => new ApiError(409, 'conflict', message);
+export const gone = (message: string) => new ApiError(410, 'gone', message);
 
 export function json(statusCode: number, body: unknown): APIGatewayProxyResultV2 {
   return {

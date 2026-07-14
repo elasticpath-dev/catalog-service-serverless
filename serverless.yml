@@ -14,6 +14,7 @@ provider:
     CATEGORIES_TABLE: ${self:custom.categoriesTable}
     PRODUCT_CATEGORIES_TABLE: ${self:custom.productCategoriesTable}
     PRICES_TABLE: ${self:custom.pricesTable}
+    PROMOTIONS_TABLE: ${self:custom.promotionsTable}
   iam:
     role:
       statements:
@@ -35,12 +36,15 @@ provider:
             - !GetAtt ProductCategoriesTable.Arn
             - !Sub "${ProductCategoriesTable.Arn}/index/*"
             - !GetAtt PricesTable.Arn
+            - !GetAtt PromotionsTable.Arn
+            - !Sub "${PromotionsTable.Arn}/index/*"
 
 custom:
   productsTable: catalog-products-${self:provider.stage}
   categoriesTable: catalog-categories-${self:provider.stage}
   productCategoriesTable: catalog-product-categories-${self:provider.stage}
   pricesTable: catalog-prices-${self:provider.stage}
+  promotionsTable: catalog-promotions-${self:provider.stage}
   esbuild:
     bundle: true
     minify: false
@@ -143,6 +147,16 @@ functions:
     events:
       - httpApi: "DELETE /prices/{sku}/{currency}"
 
+  # Promotions
+  createPromotion:
+    handler: src/handlers/promotions/create.handler
+    events:
+      - httpApi: "POST /promotions"
+  applyPromotion:
+    handler: src/handlers/promotions/apply.handler
+    events:
+      - httpApi: "POST /promotions/apply"
+
   # Seed (no HTTP event - invoked on deploy or manually)
   seed:
     handler: src/handlers/seed.handler
@@ -221,6 +235,27 @@ resources:
           - IndexName: parent-index
             KeySchema:
               - AttributeName: parentId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+
+    PromotionsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.promotionsTable}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: promo_code
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: promo-code-index
+            KeySchema:
+              - AttributeName: promo_code
                 KeyType: HASH
             Projection:
               ProjectionType: ALL

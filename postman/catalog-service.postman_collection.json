@@ -257,6 +257,147 @@
           }
         }
       ]
+    },
+    {
+      "name": "Promotions",
+      "item": [
+        {
+          "name": "Create promotion (amount off)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"promo_code\": \"SUMMER25\",\n  \"startDate\": \"2026-07-01T00:00:00Z\",\n  \"endDate\": \"2026-08-01T00:00:00Z\",\n  \"skus\": [\"{{sku}}\"],\n  \"action\": { \"type\": \"amount_off\", \"value\": 500, \"currency\": \"USD\" }\n}"
+            },
+            "description": "promo_code must be unique across promotions (409 on duplicate). Amount is minor units (cents)."
+          }
+        },
+        {
+          "name": "Create promotion (percentage off, catalog-wide)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"promo_code\": \"TENOFF\",\n  \"startDate\": \"2026-07-01T00:00:00Z\",\n  \"endDate\": \"2026-08-01T00:00:00Z\",\n  \"skus\": [],\n  \"action\": { \"type\": \"percentage_off\", \"value\": 10 }\n}"
+            },
+            "description": "Empty skus array = the promotion applies to all SKUs (catalog-wide). Percentage must be > 0 and <= 100."
+          }
+        },
+        {
+          "name": "Create promotion — invalid dates (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"promo_code\": \"BADDATES\",\n  \"startDate\": \"2026-08-01T00:00:00Z\",\n  \"endDate\": \"2026-07-01T00:00:00Z\",\n  \"skus\": [],\n  \"action\": { \"type\": \"percentage_off\", \"value\": 10 }\n}"
+            },
+            "description": "endDate before startDate — returns 400 bad_request."
+          }
+        },
+        {
+          "name": "Create promotion — duplicate code (409)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"promo_code\": \"SUMMER25\",\n  \"startDate\": \"2026-07-01T00:00:00Z\",\n  \"endDate\": \"2026-08-01T00:00:00Z\",\n  \"skus\": [],\n  \"action\": { \"type\": \"percentage_off\", \"value\": 15 }\n}"
+            },
+            "description": "Run after 'Create promotion (amount off)' — the promo_code already exists, so this returns 409 conflict."
+          }
+        },
+        {
+          "name": "Create system promotion (cart total > X, no code)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startDate\": \"2026-07-01T00:00:00Z\",\n  \"endDate\": \"2026-08-01T00:00:00Z\",\n  \"criteria\": { \"cartTotalGreaterThan\": 8000, \"currency\": \"USD\" },\n  \"action\": { \"type\": \"percentage_off\", \"value\": 10 }\n}"
+            },
+            "description": "No promo_code = system-applied: evaluated automatically against every cart on POST /promotions/apply. criteria makes it cart-level (mutually exclusive with skus)."
+          }
+        },
+        {
+          "name": "Apply promotion — with code",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions/apply",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions", "apply"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"sku\": \"{{sku}}\", \"quantity\": 2 }\n  ],\n  \"currency\": \"USD\",\n  \"code\": \"SUMMER25\"\n}"
+            },
+            "description": "Evaluates the entered code plus all system-applied promotions and applies the single best discount (ties favour the entered code)."
+          }
+        },
+        {
+          "name": "Apply promotion — system promos only (no code)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions/apply",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions", "apply"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"sku\": \"{{sku}}\", \"quantity\": 4 }\n  ],\n  \"currency\": \"USD\"\n}"
+            },
+            "description": "No code: only system-applied promotions are evaluated. If none match, returns 200 with amount 0 and message 'No promotion applied'."
+          }
+        },
+        {
+          "name": "Apply promotion — unknown code (404)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{baseUrl}}/promotions/apply",
+              "host": ["{{baseUrl}}"],
+              "path": ["promotions", "apply"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"sku\": \"{{sku}}\", \"quantity\": 1 }\n  ],\n  \"currency\": \"USD\",\n  \"code\": \"NO-SUCH-CODE\"\n}"
+            },
+            "description": "An entered code that does not exist returns 404 not_found."
+          }
+        }
+      ]
     }
   ]
 }

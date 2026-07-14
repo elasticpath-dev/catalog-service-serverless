@@ -24,4 +24,5 @@ export const TABLES = {
   categories: process.env.CATEGORIES_TABLE ?? '',
   productCategories: process.env.PRODUCT_CATEGORIES_TABLE ?? '',
   prices: process.env.PRICES_TABLE ?? '',
+  promotions: process.env.PROMOTIONS_TABLE ?? '',
 };

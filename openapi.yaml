@@ -19,6 +19,7 @@ tags:
   - name: Products
   - name: Categories
   - name: Prices
+  - name: Promotions
 
 paths:
   /products:
@@ -433,6 +434,79 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
+  /promotions:
+    post:
+      tags: [Promotions]
+      summary: Create a promotion
+      description: |
+        A promotion applies an amount-off or percentage-off action while the current
+        time is within [startDate, endDate]. Item-level promotions target `skus`
+        (empty array = all SKUs, catalog-wide); cart-level promotions carry `criteria`
+        instead (mutually exclusive with a non-empty `skus` list) and discount the cart
+        total when the criteria are met. `promo_code` is unique across promotions and
+        optional: a promotion without a code is system-applied — evaluated automatically
+        against every cart on `POST /promotions/apply`.
+      operationId: createPromotion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePromotionInput'
+      responses:
+        '201':
+          description: Promotion created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  /promotions/apply:
+    post:
+      tags: [Promotions]
+      summary: Apply the best promotion to a cart
+      description: |
+        Prices every cart line (effective price = salePrice when on sale, else listPrice,
+        with the variation -> parent price fallback), evaluates all system-applied
+        promotions plus the optionally entered `code`, and applies the single promotion
+        with the largest discount (ties favour the entered code). Amounts are minor units.
+        An `amount_off` discount applies once, capped at the eligible subtotal; a
+        `percentage_off` discount is rounded half-up.
+
+        An entered code that cannot be applied is a hard error (404 unknown, 409 not
+        started, 410 expired, 400 not applicable). Ineligible system promotions are
+        skipped silently; a cart with no matching promotion returns 200 with amount 0.
+      operationId: applyPromotion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyPromotionInput'
+      responses:
+        '200':
+          description: Cart totals with the best applicable promotion applied
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplyPromotionResult'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          description: The entered promotion code has expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
 components:
   parameters:
     limit:
@@ -464,7 +538,7 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
     Conflict:
-      description: Conflict (duplicate sku/slug, category has children, or cycle)
+      description: Conflict (duplicate sku/slug/promo_code, category has children, or cycle)
       content:
         application/json:
           schema:
@@ -481,7 +555,7 @@ components:
           properties:
             code:
               type: string
-              enum: [bad_request, not_found, conflict, internal_error]
+              enum: [bad_request, not_found, conflict, gone, internal_error]
             message: { type: string }
 
     ProductVariation:
@@ -785,6 +859,179 @@ components:
           type: integer
           minimum: 1
           description: Minor units (cents); must be lower than listPrice
+
+    AmountOffAction:
+      type: object
+      required: [type, value, currency]
+      properties:
+        type:
+          type: string
+          enum: [amount_off]
+        value:
+          type: integer
+          minimum: 1
+          description: Discount amount in minor units (cents)
+          example: 500
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          example: USD
+
+    PercentageOffAction:
+      type: object
+      required: [type, value]
+      properties:
+        type:
+          type: string
+          enum: [percentage_off]
+        value:
+          type: number
+          exclusiveMinimum: 0
+          maximum: 100
+          description: Discount percentage
+          example: 10
+
+    PromotionAction:
+      oneOf:
+        - $ref: '#/components/schemas/AmountOffAction'
+        - $ref: '#/components/schemas/PercentageOffAction'
+      discriminator:
+        propertyName: type
+
+    PromotionCriteria:
+      type: object
+      required: [cartTotalGreaterThan, currency]
+      description: Cart-level condition — the promotion applies when the cart total exceeds the threshold
+      properties:
+        cartTotalGreaterThan:
+          type: integer
+          minimum: 1
+          description: Threshold in minor units (cents); the cart currency must match
+          example: 8000
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          example: USD
+
+    CreatePromotionInput:
+      type: object
+      required: [startDate, endDate, action]
+      properties:
+        promo_code:
+          type: string
+          description: Unique across promotions. Omit to create a system-applied promotion (auto-evaluated against every cart)
+          example: SUMMER25
+        startDate: { type: string, format: date-time }
+        endDate:
+          type: string
+          format: date-time
+          description: Must be after startDate
+        skus:
+          type: array
+          items: { type: string }
+          default: []
+          description: Product or variation skus; empty array = applies to all SKUs (catalog-wide). Mutually exclusive with criteria
+        criteria:
+          $ref: '#/components/schemas/PromotionCriteria'
+        action:
+          $ref: '#/components/schemas/PromotionAction'
+
+    Promotion:
+      type: object
+      required: [id, startDate, endDate, skus, action, createdAt, updatedAt]
+      properties:
+        id: { type: string }
+        promo_code:
+          type: string
+          description: Absent = system-applied promotion
+          example: SUMMER25
+        startDate: { type: string, format: date-time }
+        endDate: { type: string, format: date-time }
+        skus:
+          type: array
+          items: { type: string }
+          description: Empty array = applies to all SKUs (catalog-wide)
+        criteria:
+          $ref: '#/components/schemas/PromotionCriteria'
+        action:
+          $ref: '#/components/schemas/PromotionAction'
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+
+    ApplyPromotionInput:
+      type: object
+      required: [items, currency]
+      properties:
+        items:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [sku, quantity]
+            properties:
+              sku:
+                type: string
+                description: Product sku or variation sku
+              quantity:
+                type: integer
+                minimum: 1
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+          example: USD
+        code:
+          type: string
+          description: Optional promo code entered by the shopper
+          example: SUMMER25
+
+    ApplyPromotionResult:
+      type: object
+      required: [items, currency, cartSubtotal, amount, total, appliedPromotion, message, formatted]
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            required: [sku, quantity, unitPrice, subtotal]
+            properties:
+              sku: { type: string }
+              quantity: { type: integer }
+              unitPrice:
+                type: integer
+                description: Effective unit price in minor units (salePrice when on sale, else listPrice)
+              subtotal:
+                type: integer
+                description: unitPrice * quantity, minor units
+        currency: { type: string, example: USD }
+        cartSubtotal:
+          type: integer
+          description: Sum of line subtotals before discount, minor units
+        amount:
+          type: integer
+          description: Discount applied, minor units (0 when no promotion applied)
+        total:
+          type: integer
+          description: cartSubtotal - amount, minor units
+        appliedPromotion:
+          nullable: true
+          type: object
+          required: [id, action]
+          properties:
+            id: { type: string }
+            promo_code:
+              type: string
+              description: Absent for system-applied promotions
+            action:
+              $ref: '#/components/schemas/PromotionAction'
+        message:
+          type: string
+          example: Promotion SUMMER25 applied
+        formatted:
+          type: object
+          required: [amount, total]
+          properties:
+            amount: { type: string, example: "$10.00" }
+            total: { type: string, example: "$40.00" }
 
     DeleteResult:
       type: object
